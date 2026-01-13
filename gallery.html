@@ -19,6 +19,45 @@
 
     }
 
+    .big-layout{
+       grid-column: span 6;
+        grid-row: span 2;
+    }
+    .normal-layout{
+        grid-column:span 2 ;
+        grid-row: span 2;;
+    }
+    .wide-layout{
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    /* now its time to make it responsive we can do that in 2 way  */
+    @media screen and (max-width:576px) {
+        /* 1st approach */
+
+        /* .container{
+            display:  block;
+        } */
+
+         /* 2nd approach */
+         .container{
+        display: grid;
+        /* it will divide all pic into 1 column  */
+        grid-template-columns: repeat(1, 1fr); 
+        gap:3px;
+        }
+
+        .big-layout,
+        .normal-layout,
+        .wide-layout{
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+
+        
+    }
 
 
 </style>
@@ -26,32 +65,37 @@
 </head>
 <body>
     <div class="container">
-        <div class="">
+        <div class="big-layout">
     <img src="images/A.jpg" alt="">
    </div>
-        <div class="">
+        <div class="normal-layout">
     <img src="images/B.jpg" alt="">
    </div>
-        <div class="">
+        <div class="normal-layout">
     <img src="images/C.jpg" alt="">
    </div>
-        <div class="">
+        <div class="wide-layout">
     <img src="images/D.jpg" alt="">
    </div>
-        <div class="">
+        <div class="wide-layout">
     <img src="images/E.jpg" alt="">
    </div>
-        <div class="">
+        <div class="normal-layout">
     <img src="images/F.jpg" alt="">
    </div>
         <div class="">
     <img src="images/G.jpg" alt="">
    </div>
         <div class="">
-    <img src="images/H.jpg" alt="">
+    <img src="images/G.jpg" alt="">
+   </div>
+        <div class="normal-layout">
+    <img src="images/I.jpg" alt="">
    </div>
         <div class="">
-    <img src="images/I.jpg" alt="">
+    <img src="images/G.jpg" alt="">
+   </div>     <div class="">
+    <img src="images/G.jpg" alt="">
    </div>
 
     </div>
