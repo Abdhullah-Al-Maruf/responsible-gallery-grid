@@ -1,0 +1,69 @@
+/* this will apply to all immediate child */
+.container>*{
+    border: 2px solid gold;
+    padding: 20px;
+    background-color: bisque;
+}
+/* we will design the layout here */
+.container{
+    display:grid;
+    gap: 10px;
+    grid-template-areas:
+    /* here i imagine that the content should be fit in 4 colume you can think it in 6 colume also */
+        "header header header header "
+        "navbar main main sidebar"
+        "navbar main main   advertise"
+        "footer footer footer  footer" 
+
+}
+
+/* now we have to give each part a name inside gride area ;  */
+
+header{
+    grid-area:header;
+}
+nav{
+    grid-area: navbar;
+}
+main{
+    grid-area: main;
+}
+#sidebar{
+    grid-area: sidebar;
+}
+#advertise{
+    grid-area: advertise;
+}
+footer{
+    grid-area: footer;
+}
+
+/* now its time to make it responsive */
+/* for small devices 576px */
+
+@media screen and (max-width:576px) {
+    .container{
+    grid-template-areas:
+    /* here i imagine that the content should be fit in 1 colume because the device will be phone and screen will be small */
+        "header "
+        "navbar"
+        "main"
+        "sidebar"
+        " advertise"
+        "footer" 
+
+}
+    
+}
+ /* for medium device 992px */
+ @media screen and (min-width:576px) and (max-width:992px) {
+    .container{
+    grid-template-areas:
+    /* here i imagine that the content should be fit in 3 colume because the device will be medium  phone  or tablet and screen will be medium */
+        "header header header "
+        "navbar navbar navbar"
+        "sidebar main main"
+        "advertise footer footer"
+}
+    
+}
